@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f3f4f6;
+}
+
+/* Spinner */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    z-index:999;
+}
+
+.spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #d1d5db;
+    border-top:6px solid #7c3aed;
+    border-radius:50%;
+    animation:girar 1s linear infinite ;
+}
+
+@keyframes girar{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+
+.oculto{
+    display:none;
+}
+
+/* Tarjeta */
+
+.card{
+    width:350px;
+    background:rgb(255, 255, 255);
+    border-radius:15px;
+    overflow: hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    position:relative;
+
+    animation:entrada 1s ease;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.image{
+    height:220px;
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    );
+}
+
+.imagen {
+    width: 250px;
+    padding: 25px;
+    margin: -15px 45px;
+}
+
+.contenido{
+    padding:20px;
+}
+
+.contenido h2{
+    margin-bottom:10px;
+}
+
+.precio{
+    color:#7c3aed;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+/* Badge */
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    background:#ef4444;
+    color:white;
+
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* Botón */
+
+.btn{
+    border:none;
+    background:#7c3aed;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background:#6d28d9;
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+/* Tooltip */
+
+.tooltip-container{
+    position:relative;
+    display:inline-block;
+}
+
+.tooltip{
+    position:absolute;
+    bottom:120%;
+    left:60%;
+    transform:translateX(-50%);
+
+    background:#111827;
+    color:white;
+
+    padding:8px 12px;
+    border-radius:6px;
+
+    white-space:nowrap;
+
+    opacity:0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+.tooltip-container:hover .tooltip{
+    opacity:1;
+    visibility:visible;
+    transition: 0.3s;
+}
